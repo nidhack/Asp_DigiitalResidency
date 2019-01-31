@@ -1,0 +1,60 @@
+﻿@model MvcApplication2.Models.Emp
+
+@{
+    ViewBag.Title = "empp";
+}
+
+<h2>empp</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Emp</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ename)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ename)
+            @Html.ValidationMessageFor(model => model.ename)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.eaddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.eaddress)
+            @Html.ValidationMessageFor(model => model.eaddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.esal)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.esal)
+            @Html.ValidationMessageFor(model => model.esal)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
